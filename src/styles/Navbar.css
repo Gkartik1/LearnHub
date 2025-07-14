@@ -1,0 +1,156 @@
+/* Navbar.css */
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color, #1e1e2e);
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  user-select: none;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary-color, #63a9ff);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover,
+.logo:focus {
+  color: var(--accent-color, #42f3ff);
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Navigation links container */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Individual nav items */
+.navbar-links li {
+  display: inline-block;
+}
+
+/* Nav links */
+.navbar-links a {
+  color: var(--text-color, #e0e0e0);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus {
+  background-color: var(--primary-color, #63a9ff);
+  color: black;
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--primary-color, #63a9ff);
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--accent-color, #42f3ff);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Logout button special style */
+.logout-btn {
+  background-color: transparent;
+  color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+  padding: 0.4rem 0.8rem;
+  font-weight: 700;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: #ff4d4d;
+  color: white;
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Theme and language selectors */
+.theme-select,
+.lang-select {
+  background-color: var(--secondary-color, #1e1e2e);
+  color: var(--text-color, #e0e0e0);
+  border: 1px solid var(--primary-color, #63a9ff);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.theme-select:hover,
+.lang-select:hover,
+.theme-select:focus,
+.lang-select:focus {
+  background-color: var(--primary-color, #63a9ff);
+  color: black;
+  outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .navbar-links li {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .btn,
+  .logout-btn {
+    width: 100%;
+  }
+}
